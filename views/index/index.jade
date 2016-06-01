@@ -2,15 +2,18 @@ extends ../layouts/default
 block content
   body
     .container(style='font-size:1.5em;margin-left:15%;margin-right:15%;')
-     .col-md-6     
+     .container-fluid
+       p Click on Launch to send the client.call([method],[parameters],[callback: default callbak is to send back the results or error to the console]) 
+      .container-fluid
+       button.btn.btn-primary.btn-lg(type='submit') Launch
+       br
+       p
+     .col-md-6 
       .panel.panel-default
        .panel-heading 
          h3 Enter RPC Values:
-       .panel-body
-        p Here will go all test forms
+       .panel-body 
          form
-           button.btn.btn-primary(type='submit') Launch rpc2 call
-           br
            fieldset.form-group
              label(for='rpc-host') RPC2-Client Host:
              input#rpc-host.form-control(type='text', name='rpc-host',placeholder='Enter your rpc-client host here')
@@ -37,14 +40,15 @@ block content
            fieldset.form-group
              label(for='moreargs') More parameters: 
              textarea#moreargs.form-control(rows='3', placeholder='Separate your parameters with ~. Each args will be included in the client.call')
+             small.text-muted Optional 
            .radio
              label
                input#optionsRadios1(type='radio', name='optionsRadios', value='option1', checked='')
-               |       Option one is this and that—be sure to include why it's great
+               |       Option one 
            .radio
              label
                input#optionsRadios2(type='radio', name='optionsRadios', value='option2')
-               |       Option two can be something else and selecting it will deselect option one
+               |       Option two 
            .radio.disabled
              label
                input#optionsRadios3(type='radio', name='optionsRadios', value='option3', disabled='')
@@ -57,7 +61,7 @@ block content
      .col-md-6 
       .panel.panel-default
        .panel-heading 
-         h3 json-rpc2:
+         h3 json-rpc2 javascript call :
        .panel-body(style='color:grey;')
         h4 RPC2-Client:
         if client
@@ -69,7 +73,7 @@ block content
      .col-md-6 
       .panel.panel-default
        .panel-heading 
-         h3 Callback/Error Results:
+         h3 Callback/Error Console:
        .panel-body(style='color:grey;')
         p=results
 
