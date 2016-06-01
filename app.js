@@ -20,7 +20,7 @@ var app = express();
 config = require('./scripts/config.js');
 
 var server = require('http').createServer(app);
-app.set('port', process.env.PORT || config.node_web_server_port);
+app.set('port', process.env.PORT || config.NODE_PORT);
 app.set('views', path.join(__dirname + '/views'));
 app.set('view engine', 'jade');
 app.set('view options', { layout: true });
@@ -41,5 +41,5 @@ app.use(express.static(path.join(__dirname, 'public')));
 require('./routes/routes')(app);
 console.log(("Express server listening on port " + app.get('port')));
 
-server.listen(config.node_web_server_port);
+server.listen(config.NODE_PORT);
 
