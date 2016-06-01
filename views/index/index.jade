@@ -1,13 +1,64 @@
 extends ../layouts/default
 block content
   body
-    .container(style='font-size:1.5em;margin-left:15%;margin-right:15%;')     
-     .panel.panel-default
-      .panel-heading 
-        h3 test Box:
-      .panel-body
+    .container(style='font-size:1.5em;margin-left:15%;margin-right:15%;')
+     .col-md-6     
+      .panel.panel-default
+       .panel-heading 
+         h3 Enter RPC Values:
+       .panel-body
         p Here will go all test forms
-
+         form
+           fieldset.form-group
+             label(for='exampleInputEmail1') Email address
+             input#exampleInputEmail1.form-control(type='email', placeholder='Enter email')
+             small.text-muted We'll never share your email with anyone else.
+           fieldset.form-group
+             label(for='exampleInputPassword1') Password
+             input#exampleInputPassword1.form-control(type='password', placeholder='Password')
+           fieldset.form-group
+             label(for='exampleSelect1') Example select
+             select#exampleSelect1.form-control
+               option 1
+               option 2
+               option 3
+               option 4
+               option 5
+           fieldset.form-group
+             label(for='exampleSelect2') Example multiple select
+             select#exampleSelect2.form-control(multiple='')
+               option 1
+               option 2
+               option 3
+               option 4
+               option 5
+           fieldset.form-group
+             label(for='exampleTextarea') Example textarea
+             textarea#exampleTextarea.form-control(rows='3')
+           .radio
+             label
+               input#optionsRadios1(type='radio', name='optionsRadios', value='option1', checked='')
+               |       Option one is this and that—be sure to include why it's great
+           .radio
+             label
+               input#optionsRadios2(type='radio', name='optionsRadios', value='option2')
+               |       Option two can be something else and selecting it will deselect option one
+           .radio.disabled
+             label
+               input#optionsRadios3(type='radio', name='optionsRadios', value='option3', disabled='')
+               |       Option three is disabled
+           .checkbox
+             label
+               input(type='checkbox')
+               |  Check me out
+           button.btn.btn-primary(type='submit') Submit
+     .col-md-6 
+      .panel.panel-default
+       .panel-heading 
+         h3 Callback/Error Results:
+       .panel-body(style='color:grey;')
+        p=results
+        
     // jQuery (necessary for Bootstrap's JavaScript plugins)
     script(src='/js/jquery.min.js')
     // Include all compiled plugins (below), or include individual files as needed

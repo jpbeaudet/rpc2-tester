@@ -8,7 +8,9 @@
 
 exports.index = function (req, res) {
 	var data = {
-		title: " RPC2-Tester | Dummy tester for json-rpc2 methods",
+		title: " RPC2-Tester ",
+		subtitle: "Dummy tester for json-rpc2 methods",
+		results: "Results will appear here."
 	};
 	res.render('index/index', data);
 };
