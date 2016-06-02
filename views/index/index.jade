@@ -2,18 +2,22 @@ extends ../layouts/default
 block content
   body
     .container(style='font-size:1.5em;margin-left:15%;margin-right:15%;')
-     .container-fluid
-       p Click on Launch to send the client.call([method],[parameters],[callback: default callbak is to send back the results or error to the console]) 
-      .container-fluid
-       button.btn.btn-primary.btn-lg(type='submit') Launch
-       br
-       p
+     .alert.alert-info
+       strong Info!
+       |	Click on Launch to send the client.call
+       |	([method],[parameters],[callback: default callback send back the results/error in response window ]) 
+
      .col-md-6 
       .panel.panel-default
        .panel-heading 
          h3 Enter RPC Values:
        .panel-body 
-         form
+         form(action='/call', method='post')
+          .container-fluid
+           center
+            button.btn.btn-primary.btn-lg(type='submit', style='width:50%;') Launch RPC Call
+            br
+            p
            fieldset.form-group
              label(for='rpc-host') RPC2-Client Host:
              input#rpc-host.form-control(type='text', name='rpc-host',placeholder='Enter your rpc-client host here')
@@ -72,9 +76,23 @@ block content
 
      .col-md-6 
       .panel.panel-default
-       .panel-heading 
-         h3 Callback/Error Console:
+       .panel-heading
+         h3 Response:
+         if status == "_DEFAULT" 
+           span.label.label-default Waiting for Call
+         if status == "_SUCCESS"
+           span.label.label-success Success 200 Ok
+         if status == "_REFUSED"
+           span.label.label-warning 401 Refused
+         if status == "_ERROR"
+           span.label.label-danger 404 Error
        .panel-body(style='color:grey;')
+        if message
+          p=message
+          hr
+        if callback
+          p=callback
+          hr
         p=results
 
     // jQuery (necessary for Bootstrap's JavaScript plugins)

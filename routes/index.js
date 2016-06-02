@@ -10,7 +10,9 @@ exports.index = function (req, res) {
 	var data = {
 		title: " RPC2-Tester ",
 		subtitle: "Dummy tester for json-rpc2 methods",
-		results: "Results will appear here."
+		results: "Results will appear here.",
+		callback: "Callback argument value",
+		status: "_DEFAULT"
 	};
 	res.render('index/index', data);
 };

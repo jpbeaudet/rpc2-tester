@@ -8,13 +8,17 @@
 
 var express = require('express');
 var index = require('../routes/index');
+var rpc = require('../routes/rpc');
 
 module.exports = function (app) {
 	
 	//Main routes
 	///////////////////////////
 	app.get('/', index.index);
-
+	
+	//RPC call routes
+	///////////////////////////
+	app.post('/call', rpc.call)
 	
 	// error handlers
 	/////////////////////////////////
