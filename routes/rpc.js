@@ -13,7 +13,7 @@
 // # call will be a string constructor representing the actual method that was called in javascript
 // example function builder object : var adder = new Function("a", "b", "return a + b");
 // =====================================================
-
+var client = require('../scripts/rpc-client')
 
 exports.call = function (req, res) {
 	// load form data
@@ -31,20 +31,22 @@ exports.call = function (req, res) {
 	req.session.form = form
 	//console.log(JSON.stringify(form))
 	
-	// set response object
-	var data = {
-		title: " RPC2-Tester ",
-		subtitle: "Dummy tester for json-rpc2 methods",
-		results: "Results will appear here.",
-		callback: "Callback argument value",
-		status: "_SUCCESS",
-		message: "Info! Successful route setup ",
-		client: "",
-		call: ""
-	};
-	req.session.data = data
-	
-	// load back index page
-	res.redirect('/');
+	var _cb= function(results, client_string, call_string, message, status){
+		// set response object
+		var data = {
+			title: " RPC2-Tester ",
+			subtitle: "Dummy tester for json-rpc2 methods",
+			callback: results || "No results",
+			status: status,
+			message: message,
+			client: client_string,
+			call: call_string
+		};
+		req.session.data = data
+
+		// load back index page
+		res.redirect('/');
+	}
+	client.call(form, _cb)
 };
 

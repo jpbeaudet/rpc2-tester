@@ -16,7 +16,7 @@ exports.index = function (req, res) {
 		title: " RPC2-Tester ",
 		subtitle: "Dummy tester for json-rpc2 methods",
 		results: "Results will appear here.",
-		callback: "Callback argument value",
+		callback: "Callback results",
 		status: "_DEFAULT",
 		form: {}
 		};

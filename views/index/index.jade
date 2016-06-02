@@ -29,23 +29,26 @@ block content
             button.btn.btn-primary.btn-lg(type='submit', style='width:50%;') Launch RPC Call
             br
             p
-           fieldset.form-group
-             label(for='rpc_host') RPC2-Client Host:
-             input#rpc_host.form-control(type='text', name='rpc_host', placeholder='Enter your rpc-client host here', value=_rpc_host)
-             small.text-muted Default: localhost
-           fieldset.form-group
-             label(for='rpc-port') RPC2-Client Port:
-             input#rpc_port.form-control(type='text', name='rpc_port',placeholder='Enter your rpc-client port here', value=_rpc_port)
-             small.text-muted Default: 80
+           .container-fluid
+            .col-md-6
+             fieldset.form-group
+               label(for='rpc_host') RPC2-Client Host:
+               input#rpc_host.form-control(type='text', name='rpc_host', placeholder='Enter host here', value=_rpc_host)
+               small.text-muted Default: localhost
+            .col-md-6
+             fieldset.form-group
+               label(for='rpc-port') RPC2-Client Port:
+               input#rpc_port.form-control(type='text', name='rpc_port',placeholder='Enter your port here', value=_rpc_port)
+               small.text-muted Default: 80
            fieldset.form-group
              label(for='rpc_method') RPC2-Client Method:
-             input#rpc_method.form-control(type='text', name='rpc_method',placeholder='Enter your rpc-client method to call', value=_rpc_method)
+             input#rpc_method.form-control(type='text', name='rpc_method',placeholder='Enter your method namespace here', value=_rpc_method)
              small.text-muted Required
            .container-fluid
             .col-md-6
              fieldset.form-group
                label(for='rpc_args1') RPC2-Client Parameters 1:
-               input#rpc_args1.form-control(type='text', name='rpc_args1',placeholder='Enter your first parameter rpc-client (string or json format)', value=_rpc_args1)
+               input#rpc_args1.form-control(type='text', name='rpc_args1',placeholder='Enter your 1º parameter here', value=_rpc_args1)
                small.text-muted Required
              fieldset.form-group
                label(for='type1') Type
@@ -58,7 +61,7 @@ block content
             .col-md-6
              fieldset.form-group
                label(for='rpc_args2') RPC2-Client Parameters 2:
-               input#rpc_args2.form-control(type='text', name='rpc_args2',placeholder='Enter your first parameter rpc-client (string or json format)', value=_rpc_args2)
+               input#rpc_args2.form-control(type='text', name='rpc_args2',placeholder='Enter your 2º parameter here', value=_rpc_args2)
                small.text-muted Optional
              fieldset.form-group
                label(for='type2') Type
@@ -80,34 +83,19 @@ block content
                option Float
                option Boolean
                option function
-           .radio
-             label
-               input#optionsRadios1(type='radio', name='optionsRadios', value='option1', checked='')
-               |       Option one 
-           .radio
-             label
-               input#optionsRadios2(type='radio', name='optionsRadios', value='option2')
-               |       Option two 
-           .radio.disabled
-             label
-               input#optionsRadios3(type='radio', name='optionsRadios', value='option3', disabled='')
-               |       Option three is disabled
-           .checkbox
-             label
-               input(type='checkbox')
-               |  Check me out
 
      .col-md-6 
       .panel.panel-default
        .panel-heading 
          h3 json-rpc2 javascript call :
        .panel-body(style='color:grey;')
-        h4 RPC2-Client:
         if client
           p=client
-        h4 RPC2-Call:
-        if call
-          p=call
+          if call
+            p=call
+        else
+          h4 RPC2-Call:
+
 
      .col-md-6 
       .panel.panel-default
@@ -126,10 +114,10 @@ block content
           if message
             p=message
             hr
-        if callback
-          p=callback
-          hr
-        p=results
+        .container-fluid
+          if callback
+            p=callback
+
 
     // jQuery (necessary for Bootstrap's JavaScript plugins)
     script(src='/js/jquery.min.js')
