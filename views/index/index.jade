@@ -11,7 +11,18 @@ block content
       .panel.panel-default
        .panel-heading 
          h3 Enter RPC Values:
-       .panel-body 
+       .panel-body
+         if form
+          - var _rpc_host= form.rpc_host 
+          - var _rpc_port= form.rpc_port
+          - var _rpc_method= form.rpc_method
+          - var _rpc_args1= form.rpc_args1
+          - var _type1= form.type1
+          - var _rpc_args2= form.rpc_args2
+          - var _type2= form.type2
+          - var _rpc_args3= form.rpc_args3
+          - var _type3= form.type3
+          
          form(action='/call', method='post')
           .container-fluid
            center
@@ -19,22 +30,22 @@ block content
             br
             p
            fieldset.form-group
-             label(for='rpc-host') RPC2-Client Host:
-             input#rpc-host.form-control(type='text', name='rpc-host',placeholder='Enter your rpc-client host here')
+             label(for='rpc_host') RPC2-Client Host:
+             input#rpc_host.form-control(type='text', name='rpc_host', placeholder='Enter your rpc-client host here', value=_rpc_host)
              small.text-muted Default: localhost
            fieldset.form-group
              label(for='rpc-port') RPC2-Client Port:
-             input#rpc-port.form-control(type='text', name='rpc-port',placeholder='Enter your rpc-client port here')
+             input#rpc_port.form-control(type='text', name='rpc_port',placeholder='Enter your rpc-client port here', value=_rpc_port)
              small.text-muted Default: 80
            fieldset.form-group
-             label(for='rpc-method') RPC2-Client Method:
-             input#rpc-method.form-control(type='text', name='rpc-method',placeholder='Enter your rpc-client method to call')
+             label(for='rpc_method') RPC2-Client Method:
+             input#rpc_method.form-control(type='text', name='rpc_method',placeholder='Enter your rpc-client method to call', value=_rpc_method)
              small.text-muted Required
            .container-fluid
             .col-md-6
              fieldset.form-group
-               label(for='rpc-args1') RPC2-Client Parameters 1:
-               input#rpc-args1.form-control(type='text', name='rpc-args1',placeholder='Enter your first parameter rpc-client (string or json format)')
+               label(for='rpc_args1') RPC2-Client Parameters 1:
+               input#rpc_args1.form-control(type='text', name='rpc_args1',placeholder='Enter your first parameter rpc-client (string or json format)', value=_rpc_args1)
                small.text-muted Required
              fieldset.form-group
                label(for='type1') Type
@@ -46,8 +57,8 @@ block content
                  option function
             .col-md-6
              fieldset.form-group
-               label(for='rpc-args2') RPC2-Client Parameters 2:
-               input#rpc-args2.form-control(type='text', name='rpc-args2',placeholder='Enter your first parameter rpc-client (string or json format)')
+               label(for='rpc_args2') RPC2-Client Parameters 2:
+               input#rpc_args2.form-control(type='text', name='rpc_args2',placeholder='Enter your first parameter rpc-client (string or json format)', value=_rpc_args2)
                small.text-muted Optional
              fieldset.form-group
                label(for='type2') Type
@@ -58,9 +69,9 @@ block content
                  option Boolean
                  option function
            fieldset.form-group
-             label(for='moreargs') More parameters: 
-             textarea#moreargs.form-control(rows='3', placeholder='Separate your parameters with ~. Each args will be included in the client.call')
-             small.text-muted Optional 
+             label(for='rpc_args3') More parameters: 
+             input#rpc_args3.form-control(type='text', name='rpc_args3', placeholder='Separate your parameters with ~. Each args will be included in the client.call', value=_rpc_args3)
+             small.text-muted Optional  
            fieldset.form-group
              label(for='type3') Type (one type for additional parameter, i will add dynamic number of args later)
              select#type3.form-control
