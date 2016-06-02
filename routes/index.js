@@ -7,12 +7,18 @@
 // =====================================================
 
 exports.index = function (req, res) {
-	var data = {
+	var data;
+	if(req.session.data){
+		data = req.session.data
+		req.session.data = null;
+	}else{
+		var data = {
 		title: " RPC2-Tester ",
 		subtitle: "Dummy tester for json-rpc2 methods",
 		results: "Results will appear here.",
 		callback: "Callback argument value",
 		status: "_DEFAULT"
-	};
+		};
+	}
 	res.render('index/index', data);
 };

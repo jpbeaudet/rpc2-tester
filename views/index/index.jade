@@ -36,15 +36,39 @@ block content
                label(for='rpc-args1') RPC2-Client Parameters 1:
                input#rpc-args1.form-control(type='text', name='rpc-args1',placeholder='Enter your first parameter rpc-client (string or json format)')
                small.text-muted Required
+             fieldset.form-group
+               label(for='type1') Type
+               select#type1.form-control
+                 option String(default)
+                 option Integer
+                 option Float
+                 option Boolean
+                 option function
             .col-md-6
              fieldset.form-group
                label(for='rpc-args2') RPC2-Client Parameters 2:
                input#rpc-args2.form-control(type='text', name='rpc-args2',placeholder='Enter your first parameter rpc-client (string or json format)')
-               small.text-muted Optional 
+               small.text-muted Optional
+             fieldset.form-group
+               label(for='type2') Type
+               select#type2.form-control
+                 option String(default)
+                 option Integer
+                 option Float
+                 option Boolean
+                 option function
            fieldset.form-group
              label(for='moreargs') More parameters: 
              textarea#moreargs.form-control(rows='3', placeholder='Separate your parameters with ~. Each args will be included in the client.call')
              small.text-muted Optional 
+           fieldset.form-group
+             label(for='type3') Type (one type for additional parameter, i will add dynamic number of args later)
+             select#type3.form-control
+               option String(default)
+               option Integer
+               option Float
+               option Boolean
+               option function
            .radio
              label
                input#optionsRadios1(type='radio', name='optionsRadios', value='option1', checked='')
@@ -87,9 +111,10 @@ block content
          if status == "_ERROR"
            span.label.label-danger 404 Error
        .panel-body(style='color:grey;')
-        if message
-          p=message
-          hr
+        .container-fluid(style='color:blue;')
+          if message
+            p=message
+            hr
         if callback
           p=callback
           hr
