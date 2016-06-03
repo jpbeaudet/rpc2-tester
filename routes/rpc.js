@@ -35,7 +35,6 @@ exports.call = function (req, res) {
 		// set response object
 		var data = {
 			title: " RPC2-Tester ",
-			subtitle: "Dummy tester for json-rpc2 methods",
 			callback: results || "No results",
 			status: status,
 			message: message,

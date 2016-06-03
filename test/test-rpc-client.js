@@ -7,7 +7,6 @@
 
 var chai = require('chai');
 var should = require('chai').should()
-var rpc2 = require('json-rpc2');
 var rpc = require('json-rpc2');
 var client = require('../scripts/rpc-client')
 
