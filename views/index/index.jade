@@ -6,6 +6,7 @@ block content
        strong Info!
        |	Click on Launch to send the client.call
        |	([method],[parameters],[callback: default callback send back the results/error in response window ]) 
+       |	Type of parameters will be auto-detected from the form and converted into the corresponding type
 
      .col-md-6 
       .panel.panel-default
@@ -50,39 +51,15 @@ block content
                label(for='rpc_args1') RPC2-Client Parameters 1:
                input#rpc_args1.form-control(type='text', name='rpc_args1',placeholder='Enter your 1º parameter here', value=_rpc_args1)
                small.text-muted Required
-             fieldset.form-group
-               label(for='type1') Type
-               select#type1.form-control
-                 option String(default)
-                 option Integer
-                 option Float
-                 option Boolean
-                 option function
             .col-md-6
              fieldset.form-group
                label(for='rpc_args2') RPC2-Client Parameters 2:
                input#rpc_args2.form-control(type='text', name='rpc_args2',placeholder='Enter your 2º parameter here', value=_rpc_args2)
                small.text-muted Optional
-             fieldset.form-group
-               label(for='type2') Type
-               select#type2.form-control
-                 option String(default)
-                 option Integer
-                 option Float
-                 option Boolean
-                 option function
            fieldset.form-group
              label(for='rpc_args3') More parameters: 
              input#rpc_args3.form-control(type='text', name='rpc_args3', placeholder='Separate your parameters with ~. Each args will be included in the client.call', value=_rpc_args3)
              small.text-muted Optional  
-           fieldset.form-group
-             label(for='type3') Type (one type for additional parameter, i will add dynamic number of args later)
-             select#type3.form-control
-               option String(default)
-               option Integer
-               option Float
-               option Boolean
-               option function
 
      .col-md-6 
       .panel.panel-default
@@ -117,7 +94,10 @@ block content
         .container-fluid
           if callback
             p=callback
-
+     .container-fluid
+     .alert.alert-warning
+       strong Nota!
+       |	You may have to allow cross-origin connection in your server heading. You can either set it to * or allow this particular domain
 
     // jQuery (necessary for Bootstrap's JavaScript plugins)
     script(src='/js/jquery.min.js')

@@ -27,7 +27,7 @@ app.set('view options', { layout: true });
 
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(require('express-session')({
     secret: 'rpc2-tester_secret',
     resave: false,
