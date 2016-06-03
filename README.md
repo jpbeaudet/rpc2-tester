@@ -21,7 +21,7 @@
 * enter parameters field
 * Click send and wait for the answer (callback results will be rendered in string/json)
 
-####### Nota:
+###### Nota:
 You migth have to explicitly permit cross origin connection(Access-Control-Allow-Origin to * or explicitly the url you made for the tester) to test your rpc-server depending on your settings.
 ```
 var server = rpc.Server.$create({
@@ -32,3 +32,16 @@ var server = rpc.Server.$create({
 });
 
 ```
+###### License:
+Open Source
+GNU Public License
+
+###### Contributors are welcome!!
+
+###### Todos: 
+* Parse incoming argument and and morph them to correspondin data type, int, float,object,functions(default string)
+* Add the dynamic boxes for unlimited args possibility
+* Add a manual callback method and function parser to test callback reactions
+* Add other rpc protocol as options
+* Make a version 2.0 and push it to npm
+* Any other cleaver addons that you will find useful!!
