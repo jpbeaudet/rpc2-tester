@@ -25,10 +25,10 @@ exports.index = function (req, res) {
 		data.form=req.session.form
 		data.form.rpc_host=JSON.stringify(req.session.form.rpc_host).replace(/"/g,"")
 		data.form.rpc_port=JSON.stringify(req.session.form.rpc_port).replace(/"/g,"")
-		data.form.rpc_method=JSON.stringify(req.session.form.rpc_method).replace(/"/g,"")
-		data.form.rpc_args1=JSON.stringify(req.session.form.rpc_args1).replace(/"/g,"")
-		data.form.rpc_args2=JSON.stringify(req.session.form.rpc_args2).replace(/"/g,"")
-		data.form.rpc_args3=JSON.stringify(req.session.form.rpc_args3).replace(/"/g,"")
+		data.form.rpc_method=req.session.form.rpc_method.replace(/"/g,"")
+		data.form.rpc_args1=JSON.stringify(req.session.form.rpc_args1).replace(/"/g,"").replace(/\\/g, '"');
+		data.form.rpc_args2=JSON.stringify(req.session.form.rpc_args2).replace(/"/g,"").replace(/\\/g, '"');
+		data.form.rpc_args3=JSON.stringify(req.session.form.rpc_args3).replace(/"/g,"").replace(/\\/g, '"');
 	}
 	res.render('index/index', data);
 };
