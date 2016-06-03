@@ -1,7 +1,7 @@
 # rpc2-tester
 ##### Dummy dashnoard to test json-rpc client and methods
 
-#### Version: 1.0
+#### Version: 1.1
 ##### Dependencies:
 
 ###### Node.js

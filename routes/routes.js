@@ -1,7 +1,7 @@
 // Author: Jean-Philippe Beaudet @ S3R3NITY Technology
 // 
 // RPC2-tester
-// Version : 0.0.1
+// Version : 1.1
 // License: 
 //
 // =====================================================
