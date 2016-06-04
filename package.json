@@ -7,7 +7,7 @@
   { "type" : "git",
     "url" : "https://github.com/jpbeaudet/rpc2-tester"
   },
-  { "license" : "(GPL-3.0)" },
+  "license" : "(GPL-3.0)" ,
   "dependencies": {
     "unit-test" : "0.0.9",
     "chai" : "3.5.0",
