@@ -1,8 +1,8 @@
 # rpc2-tester
 ##### Dummy dashnoard to test json-rpc client and methods
 
-###### Descrption:
-An alternative to [Guru JSON-RPC Tester](http://gurujsonrpc.appspot.com/ "GuruRpctester") or postman for easy rpc2 method testing on any rpc server endpoint
+###### Description:
+An alternative to [Guru JSON-RPC Tester](http://gurujsonrpc.appspot.com/ "GuruRpctester") or postman for easy rpc2 method testing on any rpc server endpoint.
 
 #### Version: 1.1
 ##### Dependencies:

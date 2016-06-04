@@ -8,6 +8,6 @@
 
 var Config = {
     NODE_HOST: "localhost",
-    NODE_PORT: 3000,
+    NODE_PORT: 8080,
 };
 module.exports = Config;
