@@ -8,6 +8,7 @@
     "url" : "https://github.com/jpbeaudet/rpc2-tester"
   },
   "license" : "(GPL-3.0)" ,
+  "scripts": {"start": "node app.js"},
   "dependencies": {
     "unit-test" : "0.0.9",
     "chai" : "3.5.0",
