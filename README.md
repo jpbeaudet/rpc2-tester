@@ -1,6 +1,9 @@
 # rpc2-tester
 ##### Dummy dashnoard to test json-rpc client and methods
 
+###### Descrption:
+An alternative to [Guru JSON-RPC Tester](http://gurujsonrpc.appspot.com/ "GuruRpctester") or postman for easy rpc2 method testing on any rpc server endpoint
+
 #### Version: 1.1
 ##### Dependencies:
 
@@ -39,9 +42,13 @@ GNU Public License
 ###### Contributors are welcome!!
 
 ###### Todos: 
-* Parse incoming argument and and morph them to correspondin data type, int, float,object,functions(default string)
+* ~~Parse incoming argument and and morph them to correspondin data type, int, float,object,functions(default string)~~
 * Add the dynamic boxes for unlimited args possibility
-* Add a manual callback method and function parser to test callback reactions
+* add response objects(shows response parameters value and size)
+* show the response bytes size
+* Make a separate result section for result and error
+* allow a textarea to copy/paste the client call directly 
+* Add a manual callback method box and function parser to test callback reactions
 * Add other rpc protocol as options
-* Make a version 2.0 and push it to npm
+* Make a version 2.0 with below todos and push it to npm
 * Any other cleaver addons that you will find useful!!
