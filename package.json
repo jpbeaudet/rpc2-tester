@@ -2,6 +2,7 @@
   "name": "rpc2tester",
   "main": "app.js",
   "description": "json-rpc dummy tester",
+  "config" : { "port" : "8080" }, 
   "dependencies": {
     "unit-test" : "0.0.9",
     "chai" : "3.5.0",
