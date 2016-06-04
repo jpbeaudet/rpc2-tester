@@ -9,6 +9,7 @@
   },
   "license" : "(GPL-3.0)" ,
   "scripts": {"start": "node app.js"},
+  "version": "1.1.0",
   "dependencies": {
     "unit-test" : "0.0.9",
     "chai" : "3.5.0",
