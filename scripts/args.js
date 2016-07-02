@@ -10,6 +10,8 @@ module.exports= {
 		var args = this._parse_args(body)
 		console.log("args array: "+ args)
 		args = this._parse_types(args)
+		args = args.filter(Boolean)
+		console.log("final args: "+args)
 		return args
 	},
 	"_parse_args": function (body){
@@ -68,7 +70,7 @@ module.exports= {
 		}
 	},
 	"_isNormalInteger": function (str) {
-		var n = ~~Number(str);
+		var n = Number(str);
 		return String(n) === str && n >= 0;
 	},
 	"_isNormalFloat": function (str) {

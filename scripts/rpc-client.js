@@ -20,7 +20,7 @@ var rpc2 = require('json-rpc2');
 
 module.exports= {
 	"call": function(form, callback){
-		
+		console.log("call has been exited")
 		// setting default value
 		var HOST = form.rpc_host || 'localhost'
 		var PORT = form.rpc_port || '80'
@@ -51,15 +51,20 @@ module.exports= {
 
 		// actually call the method
 		var status= "_DEFAULT"
+		console.log("parameters: " + parameters)
+		console.log("METHOD: " + METHOD)
 		try {
 			client.call(METHOD, parameters, function(err, result) {
+				
 				var message = "Message:  "+ METHOD+" sent response. "
 				if(err){
+					console.log("Reason:  "+ err.message)
 					message = "Reason:  "+ err.message
 					status = "_ERROR"
 				}else{
 					status = "_SUCCESS"
 				}
+				
 				callback(result, client_string, call_string, message, status);
 			});
 		}
@@ -68,8 +73,5 @@ module.exports= {
 			status = "_REFUSED"
 			callback(err, client_string, call_string, message, status)
 		}
-	},
-
-
-
+	}
 }
